@@ -186,14 +186,14 @@ class RegExpFactory{
 
 	// 6.去除星星
 	static removeStar(lineText:string ) :string{
-		const regString = `<font color="#c00000">★</font>`;
+		const regString = `<font color="#c00000">★ </font>`;
 		const reg = new RegExp(regString);
 		return lineText.replace(reg, "")
 	}
 
 	// 7.是否已存在星星
 	static checkStar(lineText:string ) :boolean{
-		const reg = new RegExp(`<font color="#c00000">★</font>`);
+		const reg = new RegExp(`<font color="#c00000">★ </font>`);
 		return reg.test(lineText);
 	}
 
@@ -210,9 +210,9 @@ class RegExpFactory{
 			const beforeBackString = beforeBackStringList[0];
 			// 先剔除前面
 			const resRemoveBefore = lineText.replace(reg, "");
-			return beforeBackString + `<font color="#c00000">★</font>` + resRemoveBefore;
+			return beforeBackString + `<font color="#c00000">★ </font>` + resRemoveBefore;
 		}else {
-			return `<font color="#c00000">★</font>` + lineText;
+			return `<font color="#c00000">★ </font>` + lineText;
 		}
 	}
 
